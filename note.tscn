@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://note.gd" id="2_4683s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g6i44"]
+resource_local_to_scene = true
 shader = ExtResource("1_o0xm7")
 shader_parameter/NoteType = 0
 

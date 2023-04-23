@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0in12n021uel"]
+
+[ext_resource type="Script" path="res://judgement_container.gd" id="1_i3t3d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4p4d"]
+font_size = 134
+outline_size = 47
+outline_color = Color(0.517647, 0.517647, 0.517647, 1)
+
+[node name="JudgementContainer" type="Node2D" groups=["Player Hit Recievers", "Player Miss Recievers"]]
+script = ExtResource("1_i3t3d")
+judgement_colors = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0.721569, 1, 1, 1), Color(0, 1, 1, 1)])
+
+[node name="Pivot" type="Marker2D" parent="."]
+
+[node name="Label" type="Label" parent="Pivot"]
+modulate = Color(0, 1, 1, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.5
+offset_top = -93.5
+offset_right = 306.5
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nautical!!"
+label_settings = SubResource("LabelSettings_o4p4d")
+horizontal_alignment = 1
+vertical_alignment = 1

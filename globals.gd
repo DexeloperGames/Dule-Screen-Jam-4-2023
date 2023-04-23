@@ -6,6 +6,7 @@ extends Node
 @export var nautical_hit_time = 16/1000.0
 
 @export var scroll_speed = 2.82
+@export var offset = -0.0/1000.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

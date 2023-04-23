@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhjijtvf8qpx8"]
+
+[ext_resource type="Script" path="res://hit_error_meter.gd" id="1_uy06o"]
+
+[node name="Hit Error Meter" type="Node2D" groups=["Player Hit Recievers"]]
+script = ExtResource("1_uy06o")
+
+[node name="Center Line" type="Line2D" parent="."]
+points = PackedVector2Array(0, 50, 0, -50)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Average Line" type="Marker2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="Average Line"]
+position = Vector2(0, 95)
+points = PackedVector2Array(-25, 50, 0, 0, 25, 50)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Hit Line Container" type="Marker2D" parent="."]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2v6du3rf2iy0"]
+
+[ext_resource type="Script" path="res://combo_counter.gd" id="1_l35ql"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7g4rt"]
+font_size = 134
+outline_size = 47
+outline_color = Color(0.517647, 0.517647, 0.517647, 1)
+
+[node name="Combo Counter" type="Node2D" groups=["Player Hit Recievers", "Player Miss Recievers"]]
+script = ExtResource("1_l35ql")
+
+[node name="Pivot" type="Marker2D" parent="."]
+
+[node name="Label" type="Label" parent="Pivot"]
+modulate = Color(0.211765, 0.909804, 0.913725, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.5
+offset_top = -187.0
+offset_right = 253.5
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "COMBO
+x4"
+label_settings = SubResource("LabelSettings_7g4rt")
+horizontal_alignment = 1
+vertical_alignment = 2
