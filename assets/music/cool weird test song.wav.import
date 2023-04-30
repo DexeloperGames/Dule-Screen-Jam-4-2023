@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cta1nlgubbmih"
-path="res://.godot/imported/cool weird test song.wav-96b75dde1e338f6b5a9c78ccea0598b8.sample"
+path="res://.godot/imported/cool weird test song.wav-9e89c8cc605bf7b97f6f6f4920104969.sample"
 
 [deps]
 
-source_file="res://cool weird test song.wav"
-dest_files=["res://.godot/imported/cool weird test song.wav-96b75dde1e338f6b5a9c78ccea0598b8.sample"]
+source_file="res://assets/music/cool weird test song.wav"
+dest_files=["res://.godot/imported/cool weird test song.wav-9e89c8cc605bf7b97f6f6f4920104969.sample"]
 
 [params]
 

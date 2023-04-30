@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0in12n021uel"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://judgement_container.gd" id="1_i3t3d"]
+[ext_resource type="Script" path="res://scenes/objects/judgement_container.gd" id="1_i3t3d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o4p4d"]
 font_size = 134

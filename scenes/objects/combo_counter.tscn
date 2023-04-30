@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2v6du3rf2iy0"]
+[gd_scene load_steps=3 format=3 uid="uid://d2s0pk2wkrpqt"]
 
-[ext_resource type="Script" path="res://combo_counter.gd" id="1_l35ql"]
+[ext_resource type="Script" path="res://scenes/objects/combo_counter.gd" id="1_ywu5q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7g4rt"]
 font_size = 134
@@ -8,7 +8,7 @@ outline_size = 47
 outline_color = Color(0.517647, 0.517647, 0.517647, 1)
 
 [node name="Combo Counter" type="Node2D" groups=["Player Hit Recievers", "Player Miss Recievers"]]
-script = ExtResource("1_l35ql")
+script = ExtResource("1_ywu5q")
 
 [node name="Pivot" type="Marker2D" parent="."]
 

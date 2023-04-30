@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://q05o11cnv8vt"
+path="res://.godot/imported/Mouth Grid.png-bc743c02d60135e32d82c26778bbd800.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/textures/tytina/Mouth Grid.png"
+dest_files=["res://.godot/imported/Mouth Grid.png-bc743c02d60135e32d82c26778bbd800.ctexarray"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=4
+slices/vertical=4

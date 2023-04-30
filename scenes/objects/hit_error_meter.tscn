@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhjijtvf8qpx8"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://hit_error_meter.gd" id="1_uy06o"]
+[ext_resource type="Script" path="res://scenes/objects/hit_error_meter.gd" id="1_uy06o"]
 
 [node name="Hit Error Meter" type="Node2D" groups=["Player Hit Recievers"]]
 script = ExtResource("1_uy06o")

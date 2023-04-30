@@ -1,0 +1,148 @@
+[gd_resource type="VisualShader" load_steps=14 format=3 uid="uid://dftbax01nbsin"]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_fm8rx"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_vr6p0"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, 0.5]
+op_type = 4
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_ht7bn"]
+parameter_name = "Eye_Pupil"
+texture_filter = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_v2oq3"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_7hqwb"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(-1, 1)]
+op_type = 0
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_22gki"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeTexture2DArrayParameter" id="VisualShaderNodeTexture2DArrayParameter_ajdo4"]
+parameter_name = "Eye_Grid_Base"
+texture_filter = 1
+
+[sub_resource type="VisualShaderNodeTexture2DArray" id="VisualShaderNodeTexture2DArray_xcwkv"]
+source = 1
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_7oxfj"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, 0.5]
+op_type = 4
+
+[sub_resource type="VisualShaderNodeTexture2DArray" id="VisualShaderNodeTexture2DArray_wdkq3"]
+source = 1
+
+[sub_resource type="VisualShaderNodeTexture2DArrayParameter" id="VisualShaderNodeTexture2DArrayParameter_iao77"]
+parameter_name = "Eye_Grid_Mask"
+texture_filter = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_r0pbx"]
+source = 5
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_gx0em"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[resource]
+code = "shader_type spatial;
+uniform sampler2DArray Eye_Grid_Base : filter_nearest;
+uniform sampler2D Eye_Pupil : filter_nearest;
+uniform sampler2DArray Eye_Grid_Mask : filter_nearest;
+
+
+
+void fragment() {
+	vec4 n_out4p0;
+// Texture2DArray:4
+	n_out4p0 = texture(Eye_Grid_Base, vec3(UV, 0.0));
+
+
+// Input:13
+	vec2 n_out13p0 = UV;
+
+
+// VectorOp:14
+	vec2 n_in14p1 = vec2(-1.00000, 1.00000);
+	vec2 n_out14p0 = n_out13p0 * n_in14p1;
+
+
+	vec4 n_out8p0;
+// Texture2D:8
+	n_out8p0 = texture(Eye_Pupil, n_out14p0);
+
+
+// VectorDecompose:10
+	float n_out10p0 = n_out8p0.x;
+	float n_out10p1 = n_out8p0.y;
+	float n_out10p2 = n_out8p0.z;
+	float n_out10p3 = n_out8p0.w;
+
+
+// Mix:11
+	vec3 n_out11p0 = mix(vec3(n_out4p0.xyz), vec3(n_out8p0.xyz), n_out10p3);
+
+
+	vec4 n_out6p0;
+// Texture2DArray:6
+	n_out6p0 = texture(Eye_Grid_Mask, vec3(UV, 0.0));
+
+
+// VectorDecompose:9
+	float n_out9p0 = n_out6p0.x;
+	float n_out9p1 = n_out6p0.y;
+	float n_out9p2 = n_out6p0.z;
+	float n_out9p3 = n_out6p0.w;
+
+
+// Mix:5
+	vec3 n_out5p0 = mix(vec3(n_out4p0.xyz), n_out11p0, n_out9p3);
+
+
+// VectorDecompose:2
+	float n_out2p0 = n_out4p0.x;
+	float n_out2p1 = n_out4p0.y;
+	float n_out2p2 = n_out4p0.z;
+	float n_out2p3 = n_out4p0.w;
+
+
+// Output:0
+	ALBEDO = n_out5p0;
+	ALPHA = n_out2p3;
+
+
+}
+"
+graph_offset = Vector2(-756.125, 209.087)
+nodes/fragment/2/node = SubResource("VisualShaderNodeVectorDecompose_22gki")
+nodes/fragment/2/position = Vector2(-520, 0)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DArrayParameter_ajdo4")
+nodes/fragment/3/position = Vector2(-1320, -100)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture2DArray_xcwkv")
+nodes/fragment/4/position = Vector2(-920, -80)
+nodes/fragment/5/node = SubResource("VisualShaderNodeMix_7oxfj")
+nodes/fragment/5/position = Vector2(-60, 180)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture2DArray_wdkq3")
+nodes/fragment/6/position = Vector2(-920, 280)
+nodes/fragment/7/node = SubResource("VisualShaderNodeTexture2DArrayParameter_iao77")
+nodes/fragment/7/position = Vector2(-1320, 260)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_r0pbx")
+nodes/fragment/8/position = Vector2(-860, 820)
+nodes/fragment/9/node = SubResource("VisualShaderNodeVectorDecompose_gx0em")
+nodes/fragment/9/position = Vector2(-540, 320)
+nodes/fragment/10/node = SubResource("VisualShaderNodeVectorDecompose_fm8rx")
+nodes/fragment/10/position = Vector2(-480, 660)
+nodes/fragment/11/node = SubResource("VisualShaderNodeMix_vr6p0")
+nodes/fragment/11/position = Vector2(-240, 420)
+nodes/fragment/12/node = SubResource("VisualShaderNodeTexture2DParameter_ht7bn")
+nodes/fragment/12/position = Vector2(-1380, 900)
+nodes/fragment/13/node = SubResource("VisualShaderNodeInput_v2oq3")
+nodes/fragment/13/position = Vector2(-1620, 800)
+nodes/fragment/14/node = SubResource("VisualShaderNodeVectorOp_7hqwb")
+nodes/fragment/14/position = Vector2(-1168.95, 724.89)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 2, 4, 0, 2, 0, 7, 0, 6, 2, 6, 0, 9, 0, 9, 3, 5, 2, 4, 0, 5, 0, 11, 0, 5, 1, 4, 0, 11, 0, 12, 0, 8, 2, 8, 0, 10, 0, 10, 3, 11, 2, 8, 0, 11, 1, 5, 0, 0, 0, 2, 3, 0, 1, 13, 0, 14, 0, 14, 0, 8, 0)

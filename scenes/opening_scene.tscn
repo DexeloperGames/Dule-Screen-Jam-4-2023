@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0us5p1grwl5q"]
+
+[ext_resource type="PackedScene" uid="uid://dm3y3nactiehc" path="res://assets/models/tytina1.glb" id="1_xglvt"]
+
+[node name="Opening Scene" type="Node3D"]
+
+[node name="tytina1" parent="." instance=ExtResource("1_xglvt")]

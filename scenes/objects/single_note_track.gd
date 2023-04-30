@@ -3,7 +3,7 @@ class_name NoteTrack
 
 @export var notes : Array
 @export var song_time : float = 0.0
-@export var note_scene : PackedScene = preload("res://note.tscn")
+@export var note_scene : PackedScene = preload("res://scenes/objects/note.tscn")
 @export var track_type : int = 0
 
 # Called when the node enters the scene tree for the first time.

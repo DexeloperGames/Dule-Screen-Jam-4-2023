@@ -1,0 +1,65 @@
+[gd_resource type="VisualShader" load_steps=6 format=3 uid="uid://ca3bjrahinqtw"]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_noy78"]
+constant = Color(0.462745, 0.811765, 0.631373, 1)
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_nwsli"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, 0.5]
+op_type = 4
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_706yq"]
+parameter_name = "Right_Arm"
+texture_filter = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_17uuu"]
+source = 5
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_7esm4"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[resource]
+code = "shader_type spatial;
+uniform sampler2D Right_Arm : filter_nearest;
+
+
+
+void fragment() {
+// ColorConstant:2
+	vec4 n_out2p0 = vec4(0.462745, 0.811765, 0.631373, 1.000000);
+
+
+	vec4 n_out5p0;
+// Texture2D:5
+	n_out5p0 = texture(Right_Arm, UV);
+
+
+// VectorDecompose:6
+	float n_out6p0 = n_out5p0.x;
+	float n_out6p1 = n_out5p0.y;
+	float n_out6p2 = n_out5p0.z;
+	float n_out6p3 = n_out5p0.w;
+
+
+// Mix:3
+	vec3 n_out3p0 = mix(vec3(n_out2p0.xyz), vec3(n_out5p0.xyz), n_out6p3);
+
+
+// Output:0
+	ALBEDO = n_out3p0;
+
+
+}
+"
+graph_offset = Vector2(-636.628, 5.56543)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_noy78")
+nodes/fragment/2/position = Vector2(-160, 340)
+nodes/fragment/3/node = SubResource("VisualShaderNodeMix_nwsli")
+nodes/fragment/3/position = Vector2(29, 363)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture2DParameter_706yq")
+nodes/fragment/4/position = Vector2(-500, 380)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_17uuu")
+nodes/fragment/5/position = Vector2(-156, 640)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorDecompose_7esm4")
+nodes/fragment/6/position = Vector2(120, 580)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 0, 4, 0, 5, 2, 5, 0, 6, 0, 6, 3, 3, 2, 5, 0, 3, 1, 3, 0, 0, 0)

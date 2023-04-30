@@ -1,0 +1,33 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://dac0aqolwlfop"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_a71tt"]
+parameter_name = "Dress_Bottom"
+texture_filter = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_e467j"]
+source = 5
+
+[resource]
+code = "shader_type spatial;
+uniform sampler2D Dress_Bottom : filter_nearest;
+
+
+
+void fragment() {
+	vec4 n_out3p0;
+// Texture2D:3
+	n_out3p0 = texture(Dress_Bottom, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out3p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-274.829, -181.417)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_a71tt")
+nodes/fragment/2/position = Vector2(-220, 80)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_e467j")
+nodes/fragment/3/position = Vector2(117.155, 264.401)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 0, 0)

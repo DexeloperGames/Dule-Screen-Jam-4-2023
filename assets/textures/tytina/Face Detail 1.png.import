@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqja3owhchcmj"
-path.s3tc="res://.godot/imported/bubblebase.png-92efe46c6550bb008f33ca1d0174f2c8.s3tc.ctex"
+uid="uid://c4yc1em6nejhf"
+path="res://.godot/imported/Face Detail 1.png-15c81fe2c586caee08a199323ee9bda3.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://bubblebase.png"
-dest_files=["res://.godot/imported/bubblebase.png-92efe46c6550bb008f33ca1d0174f2c8.s3tc.ctex"]
+source_file="res://assets/textures/tytina/Face Detail 1.png"
+dest_files=["res://.godot/imported/Face Detail 1.png-15c81fe2c586caee08a199323ee9bda3.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

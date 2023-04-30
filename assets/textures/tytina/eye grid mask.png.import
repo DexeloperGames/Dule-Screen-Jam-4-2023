@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://c6g7omslooorg"
+path="res://.godot/imported/eye grid mask.png-3e4a4c03f41567dff7182249dbbd09b3.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/textures/tytina/eye grid mask.png"
+dest_files=["res://.godot/imported/eye grid mask.png-3e4a4c03f41567dff7182249dbbd09b3.ctexarray"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=4
+slices/vertical=4

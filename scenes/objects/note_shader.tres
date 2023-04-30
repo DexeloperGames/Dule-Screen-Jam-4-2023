@@ -1,6 +1,6 @@
-[gd_resource type="VisualShader" load_steps=14 format=3 uid="uid://dybyjhfmypbgj"]
+[gd_resource type="VisualShader" load_steps=14 format=3 uid="uid://c08ru800egd7c"]
 
-[ext_resource type="Texture2D" uid="uid://dqja3owhchcmj" path="res://bubblebase.png" id="1_qsv5m"]
+[ext_resource type="Texture2D" uid="uid://dqja3owhchcmj" path="res://assets/textures/bubblebase.png" id="1_6ixgv"]
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_wd6s8"]
 parameter_name = "Note1Color"
@@ -18,7 +18,7 @@ qualifier = 1
 parameter_name = "NoteType"
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_3b6mf"]
-texture = ExtResource("1_qsv5m")
+texture = ExtResource("1_6ixgv")
 
 [sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_h7dja"]
 default_input_values = [0, Quaternion(0, 0, 0, 0)]

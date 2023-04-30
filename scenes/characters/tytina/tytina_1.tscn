@@ -1,0 +1,205 @@
+[gd_scene load_steps=48 format=3 uid="uid://knaidybndje"]
+
+[ext_resource type="PackedScene" uid="uid://dm3y3nactiehc" path="res://assets/models/tytina1.glb" id="1_06hpc"]
+[ext_resource type="Shader" uid="uid://dscf2e1yrt5r1" path="res://scenes/characters/tytina/materials/main_skin.tres" id="2_uhaxe"]
+[ext_resource type="Shader" uid="uid://d0n3bdsyk6i7a" path="res://scenes/characters/tytina/materials/face_details.tres" id="3_ajdrl"]
+[ext_resource type="Texture2D" uid="uid://c4yc1em6nejhf" path="res://assets/textures/tytina/Face Detail 1.png" id="4_6ceoe"]
+[ext_resource type="Shader" uid="uid://cvr8v6smh4ugg" path="res://scenes/characters/tytina/materials/top.tres" id="5_2dui1"]
+[ext_resource type="Texture2D" uid="uid://0i6e2n1itfbt" path="res://assets/textures/tytina/Dress Top.png" id="6_ew8ue"]
+[ext_resource type="Shader" uid="uid://dac0aqolwlfop" path="res://scenes/characters/tytina/materials/dressbottom.tres" id="7_l0p18"]
+[ext_resource type="Texture2D" uid="uid://bqrh3r3t1x51g" path="res://assets/textures/tytina/Dress Bottom 1.png" id="8_ab8fm"]
+[ext_resource type="Shader" uid="uid://ca3bjrahinqtw" path="res://scenes/characters/tytina/materials/right_arm.tres" id="9_1ljkv"]
+[ext_resource type="Texture2D" uid="uid://dd4u5xfgrowab" path="res://assets/textures/tytina/Right Arm 1.png" id="10_m2jeo"]
+[ext_resource type="Shader" uid="uid://d4mufcfhbp4m1" path="res://scenes/characters/tytina/materials/gloves.tres" id="11_4kyaf"]
+[ext_resource type="Shader" uid="uid://dvdf5njbu7mqb" path="res://scenes/characters/tytina/materials/HiHeals.tres" id="12_w430a"]
+[ext_resource type="Texture2D" uid="uid://bigup2lxe0py0" path="res://assets/textures/tytina/Hair Base Color.png" id="13_rt5xg"]
+[ext_resource type="Texture2D" uid="uid://bg8r33b0jw4ql" path="res://assets/textures/tytina/Hair Hilights.png" id="14_0bwdf"]
+[ext_resource type="Shader" uid="uid://dtilw5lgmpubo" path="res://scenes/characters/tytina/materials/Mouth.tres" id="15_h2qrh"]
+[ext_resource type="CompressedTexture2DArray" uid="uid://q05o11cnv8vt" path="res://assets/textures/tytina/Mouth Grid.png" id="16_clscr"]
+[ext_resource type="Shader" uid="uid://dj4b5w6vac2py" path="res://scenes/characters/tytina/materials/mysetermatiaral.tres" id="17_ujs1g"]
+[ext_resource type="Shader" uid="uid://ci35yqwomk46b" path="res://scenes/characters/tytina/materials/crown.tres" id="18_b824r"]
+[ext_resource type="Texture2D" uid="uid://ujte7cirob0x" path="res://assets/textures/tytina/Crown 1.png" id="19_oe3q8"]
+[ext_resource type="Texture2D" uid="uid://53xa1wglgjsy" path="res://assets/textures/tytina/Crown Highlights.png" id="20_wjuws"]
+[ext_resource type="Texture2D" uid="uid://fjxw2spgms7g" path="res://assets/textures/tytina/Crown Shade.png" id="21_wcyj7"]
+[ext_resource type="Shader" uid="uid://dftbax01nbsin" path="res://scenes/characters/tytina/materials/left_eye.tres" id="22_u8iit"]
+[ext_resource type="CompressedTexture2DArray" uid="uid://4jvaya8hyjn2" path="res://assets/textures/tytina/eye grid base.png" id="23_tw385"]
+[ext_resource type="CompressedTexture2DArray" uid="uid://c6g7omslooorg" path="res://assets/textures/tytina/eye grid mask.png" id="24_btel5"]
+[ext_resource type="Texture2D" uid="uid://c8u3tt4dso027" path="res://assets/textures/tytina/cyber_eye_pupil_32x32.png" id="25_u5ppm"]
+[ext_resource type="Shader" uid="uid://bs5ld0m3nscpv" path="res://scenes/characters/tytina/materials/Right_eye.tres" id="26_4dfek"]
+[ext_resource type="Texture2D" uid="uid://5r84hw0xu7a3" path="res://assets/textures/tytina/eye_pupil_32x32.png" id="27_weuqe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_np8c8"]
+render_priority = 0
+shader = ExtResource("2_uhaxe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2wsh"]
+render_priority = 0
+shader = ExtResource("3_ajdrl")
+shader_parameter/Face_Details = ExtResource("4_6ceoe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4nuxu"]
+render_priority = 0
+shader = ExtResource("5_2dui1")
+shader_parameter/Dress_Top = ExtResource("6_ew8ue")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drfnc"]
+render_priority = 0
+shader = ExtResource("7_l0p18")
+shader_parameter/Dress_Bottom = ExtResource("8_ab8fm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kir6a"]
+render_priority = 0
+shader = ExtResource("9_1ljkv")
+shader_parameter/Right_Arm = ExtResource("10_m2jeo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_byaxh"]
+render_priority = 0
+shader = ExtResource("11_4kyaf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ychtu"]
+render_priority = 0
+shader = ExtResource("12_w430a")
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_kb3fx"]
+parameter_name = "Hair_Base_Color"
+texture_filter = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_bnbjb"]
+source = 5
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_165xu"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, 0.5]
+op_type = 4
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_gwnh1"]
+parameter_name = "Hair_Hilights"
+texture_filter = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5irfp"]
+source = 5
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_g4ffy"]
+default_input_values = [0, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShader" id="VisualShader_vjus0"]
+code = "shader_type spatial;
+render_mode cull_disabled;
+
+uniform sampler2D Hair_Base_Color : filter_nearest;
+uniform sampler2D Hair_Hilights : filter_nearest;
+
+
+
+void fragment() {
+	vec4 n_out3p0;
+// Texture2D:3
+	n_out3p0 = texture(Hair_Base_Color, UV);
+
+
+	vec4 n_out6p0;
+// Texture2D:6
+	n_out6p0 = texture(Hair_Hilights, UV);
+
+
+// VectorDecompose:7
+	float n_out7p0 = n_out6p0.x;
+	float n_out7p1 = n_out6p0.y;
+	float n_out7p2 = n_out6p0.z;
+	float n_out7p3 = n_out6p0.w;
+
+
+// Mix:4
+	vec3 n_out4p0 = mix(vec3(n_out3p0.xyz), vec3(n_out6p0.xyz), n_out7p3);
+
+
+// Output:0
+	ALBEDO = n_out4p0;
+
+
+}
+"
+modes/cull = 2
+nodes/fragment/0/position = Vector2(1120, 140)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_kb3fx")
+nodes/fragment/2/position = Vector2(-100, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_bnbjb")
+nodes/fragment/3/position = Vector2(231.785, 333.319)
+nodes/fragment/4/node = SubResource("VisualShaderNodeMix_165xu")
+nodes/fragment/4/position = Vector2(531.047, 414.723)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture2DParameter_gwnh1")
+nodes/fragment/5/position = Vector2(-120, 500)
+nodes/fragment/6/node = SubResource("VisualShaderNodeTexture_5irfp")
+nodes/fragment/6/position = Vector2(200, 700)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVectorDecompose_g4ffy")
+nodes/fragment/7/position = Vector2(483.796, 773.296)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 3, 0, 4, 0, 5, 0, 6, 2, 6, 0, 7, 0, 7, 3, 4, 2, 6, 0, 4, 1, 4, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6dnt"]
+render_priority = 0
+shader = SubResource("VisualShader_vjus0")
+shader_parameter/Hair_Base_Color = ExtResource("13_rt5xg")
+shader_parameter/Hair_Hilights = ExtResource("14_0bwdf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74vtt"]
+render_priority = 0
+shader = ExtResource("15_h2qrh")
+shader_parameter/Mouth_Grid = ExtResource("16_clscr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xlkeu"]
+render_priority = 0
+shader = ExtResource("17_ujs1g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8hxyn"]
+render_priority = 0
+shader = ExtResource("18_b824r")
+shader_parameter/Crown_Shade = ExtResource("21_wcyj7")
+shader_parameter/Crown = ExtResource("19_oe3q8")
+shader_parameter/Crown_Hilights = ExtResource("20_wjuws")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owv6y"]
+render_priority = 0
+shader = ExtResource("22_u8iit")
+shader_parameter/Eye_Grid_Base = ExtResource("23_tw385")
+shader_parameter/Eye_Pupil = ExtResource("25_u5ppm")
+shader_parameter/Eye_Grid_Mask = ExtResource("24_btel5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1hbvo"]
+render_priority = 0
+shader = ExtResource("26_4dfek")
+shader_parameter/Eye_Grid_Base = ExtResource("23_tw385")
+shader_parameter/Eye_Pupil = ExtResource("27_weuqe")
+shader_parameter/Eye_Grid_Mask = ExtResource("24_btel5")
+
+[node name="tytina1" instance=ExtResource("1_06hpc")]
+
+[node name="Skeleton3D" parent="Princess Tytina Armature" index="0"]
+bones/1/rotation = Quaternion(0.362013, 0.0594237, -0.0247064, 0.929949)
+bones/2/rotation = Quaternion(0.0250381, 0.0326373, 0.00642674, 0.999133)
+bones/3/rotation = Quaternion(-0.0822985, 0.0170001, 0.0720187, 0.993857)
+bones/4/rotation = Quaternion(0.309828, -0.0136681, -0.0039581, 0.950686)
+bones/5/rotation = Quaternion(4.821e-09, -0.0450703, -7.32782e-09, 0.998984)
+bones/6/rotation = Quaternion(0.994343, 0.025518, -0.098541, 0.0303321)
+bones/7/rotation = Quaternion(0.126537, -0.0100882, -0.0339024, 0.991331)
+bones/9/rotation = Quaternion(-0.160049, 0.633941, -0.524569, 0.54528)
+bones/10/rotation = Quaternion(0.613505, -0.0118978, -0.131451, 0.778582)
+bones/11/rotation = Quaternion(0.0210855, 0.0226298, 0.0437091, 0.998565)
+bones/15/rotation = Quaternion(-0.385779, -0.161179, 0.360707, 0.833719)
+bones/16/rotation = Quaternion(-0.302509, -0.217182, 0.351669, 0.858865)
+
+[node name="Princess Tytina Mesh" parent="Princess Tytina Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_np8c8")
+surface_material_override/1 = SubResource("ShaderMaterial_t2wsh")
+surface_material_override/2 = SubResource("ShaderMaterial_4nuxu")
+surface_material_override/3 = SubResource("ShaderMaterial_drfnc")
+surface_material_override/4 = SubResource("ShaderMaterial_kir6a")
+surface_material_override/5 = SubResource("ShaderMaterial_byaxh")
+surface_material_override/6 = SubResource("ShaderMaterial_ychtu")
+surface_material_override/7 = SubResource("ShaderMaterial_y6dnt")
+surface_material_override/8 = SubResource("ShaderMaterial_74vtt")
+surface_material_override/9 = SubResource("ShaderMaterial_xlkeu")
+surface_material_override/10 = SubResource("ShaderMaterial_8hxyn")
+surface_material_override/11 = SubResource("ShaderMaterial_owv6y")
+surface_material_override/12 = SubResource("ShaderMaterial_1hbvo")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Princess Tytina Armature/Skeleton3D" index="1"]

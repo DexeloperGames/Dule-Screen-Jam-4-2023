@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://fgqf6854gfjb"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://single_note_track.gd" id="1_blnno"]
+[ext_resource type="Script" path="res://scenes/objects/single_note_track.gd" id="1_blnno"]
 
 [node name="SingleNoteTrack" type="Node2D"]
 script = ExtResource("1_blnno")

@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://1ctcuktomo7q"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Shader" uid="uid://dybyjhfmypbgj" path="res://note_shader.tres" id="1_o0xm7"]
-[ext_resource type="Script" path="res://note.gd" id="2_4683s"]
+[ext_resource type="Shader" uid="uid://c08ru800egd7c" path="res://scenes/objects/note_shader.tres" id="1_vwg77"]
+[ext_resource type="Script" path="res://scenes/objects/note.gd" id="2_5r7nt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g6i44"]
 resource_local_to_scene = true
-shader = ExtResource("1_o0xm7")
+shader = ExtResource("1_vwg77")
 shader_parameter/NoteType = 0
 
 [sub_resource type="QuadMesh" id="QuadMesh_04vh8"]
@@ -14,4 +14,4 @@ size = Vector2(128, -128)
 [node name="Note" type="MeshInstance2D"]
 material = SubResource("ShaderMaterial_g6i44")
 mesh = SubResource("QuadMesh_04vh8")
-script = ExtResource("2_4683s")
+script = ExtResource("2_5r7nt")
