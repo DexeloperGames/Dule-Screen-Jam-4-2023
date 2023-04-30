@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://caprwfieqxglr"]
+
+[ext_resource type="PackedScene" uid="uid://dcfwghddf1oxm" path="res://scenes/UI/settings_menu.tscn" id="1_y1dqt"]
+
+[node name="DS Display Manager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 384.0
+
+[node name="Settings Menu" parent="." instance=ExtResource("1_y1dqt")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_bottom = 0.0
+grow_vertical = 0

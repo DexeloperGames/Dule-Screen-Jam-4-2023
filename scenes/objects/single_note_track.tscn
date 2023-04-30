@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://smfel28elal0"]
 
 [ext_resource type="Script" path="res://scenes/objects/single_note_track.gd" id="1_blnno"]
 

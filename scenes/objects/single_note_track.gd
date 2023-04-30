@@ -6,6 +6,7 @@ class_name NoteTrack
 @export var note_scene : PackedScene = preload("res://scenes/objects/note.tscn")
 @export var track_type : int = 0
 
+@export var auto_play : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Scaler.scale.y = Globals.scroll_speed
@@ -25,6 +26,11 @@ func load_notes(note_data):
 		pass
 	notes.sort_custom(func(a,b): return a.hit_time < b.hit_time)
 	pass
+
+func refresh_notes():
+	for note in notes:
+		note.visible = true
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Scaler/Scroller.position.y = -song_time*1000.0
@@ -52,6 +58,7 @@ func note_missed(note):
 		note.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _track_input(event : InputEvent):
+	if auto_play: return
 	print("TRACK GOT INPUT ", track_type)
 	if event.is_pressed():
 		var closest = find_closest_note()

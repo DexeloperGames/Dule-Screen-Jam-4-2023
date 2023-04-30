@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/objects/playfield.gd" id="1_620sc"]
 [ext_resource type="Texture2D" uid="uid://dqja3owhchcmj" path="res://assets/textures/bubblebase.png" id="2_mismi"]
-[ext_resource type="PackedScene" path="res://scenes/objects/single_note_track.tscn" id="3_ldhmr"]
+[ext_resource type="PackedScene" uid="uid://smfel28elal0" path="res://scenes/objects/single_note_track.tscn" id="3_ldhmr"]
 [ext_resource type="AudioStream" uid="uid://cta1nlgubbmih" path="res://assets/music/cool weird test song.wav" id="4_bj2wa"]
 [ext_resource type="PackedScene" path="res://scenes/objects/judgement_container.tscn" id="5_dbj0n"]
 [ext_resource type="PackedScene" path="res://scenes/objects/hit_error_meter.tscn" id="6_nw1wd"]
@@ -11,13 +11,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scpd6"]
 size = Vector2(256, 384)
 
-[node name="Playfield" type="Node2D" node_paths=PackedStringArray("notetrack0", "notetrack1", "notetrack2", "notetrack3") groups=["Player Hit Recievers"]]
+[node name="Playfield" type="Node2D" node_paths=PackedStringArray("notetrack0", "notetrack1", "notetrack2", "notetrack3", "audio_player") groups=["Player Hit Recievers"]]
 position = Vector2(128, 34)
 script = ExtResource("1_620sc")
 notetrack0 = NodePath("Tracks/SingleNoteTrack")
 notetrack1 = NodePath("Tracks/SingleNoteTrack2")
 notetrack2 = NodePath("Tracks/SingleNoteTrack3")
 notetrack3 = NodePath("Tracks/SingleNoteTrack4")
+audio_player = NodePath("AudioStreamPlayer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -625.174
@@ -81,19 +82,21 @@ offset_right = -222.644
 offset_bottom = 46.1984
 text = "SCORE:"
 
-[node name="JudgementContainer" parent="." instance=ExtResource("5_dbj0n")]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="JudgementContainer" parent="Node2D" instance=ExtResource("5_dbj0n")]
 position = Vector2(0, 213.208)
 scale = Vector2(0.327842, 0.327842)
 
-[node name="Hit Error Meter" parent="." instance=ExtResource("6_nw1wd")]
+[node name="Hit Error Meter" parent="Node2D" instance=ExtResource("6_nw1wd")]
 position = Vector2(0, 115.594)
 scale = Vector2(0.239396, 0.239396)
 
-[node name="Combo Counter" parent="." instance=ExtResource("7_gq3vl")]
+[node name="Combo Counter" parent="Node2D" instance=ExtResource("7_gq3vl")]
 position = Vector2(-67, 307)
 scale = Vector2(0.22238, 0.22238)
 
-[node name="Max Combo Counter2" parent="." instance=ExtResource("7_gq3vl")]
+[node name="Max Combo Counter2" parent="Node2D" instance=ExtResource("7_gq3vl")]
 position = Vector2(84, 313)
 scale = Vector2(0.127697, 0.127697)
 combo_display = 1

@@ -18,6 +18,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if parent_track:
+		if parent_track.auto_play and parent_track.song_time >= hit_time:
+			visible = false
+			process_mode = Node.PROCESS_MODE_DISABLED
+			return
+			
 		if parent_track.song_time > hit_time + Globals.miss_time:
 			get_tree().call_group("Player Miss Recievers", "recieve_player_miss")
 			parent_track.note_missed(self)

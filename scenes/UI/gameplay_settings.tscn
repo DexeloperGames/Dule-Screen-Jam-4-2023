@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://b46hu5828atnw"]
+
+[ext_resource type="PackedScene" uid="uid://0y0qpp0ertw0" path="res://scenes/objects/playfield.tscn" id="1_61v2l"]
+
+[node name="Gameplay Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 384.0
+
+[node name="Background Gameplay Tiktok" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Playfield" parent="Background Gameplay Tiktok" instance=ExtResource("1_61v2l")]
+auto_play = true
+show_ui = false
+
+[node name="Settings Container" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 256.0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Settings Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.568627)
