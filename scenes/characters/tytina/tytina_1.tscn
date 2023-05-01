@@ -1,6 +1,7 @@
-[gd_scene load_steps=48 format=3 uid="uid://knaidybndje"]
+[gd_scene load_steps=49 format=3 uid="uid://knaidybndje"]
 
 [ext_resource type="PackedScene" uid="uid://dm3y3nactiehc" path="res://assets/models/tytina1.glb" id="1_06hpc"]
+[ext_resource type="Script" path="res://scenes/characters/tytina/tytina_1.gd" id="2_rnh45"]
 [ext_resource type="Shader" uid="uid://dscf2e1yrt5r1" path="res://scenes/characters/tytina/materials/main_skin.tres" id="2_uhaxe"]
 [ext_resource type="Shader" uid="uid://d0n3bdsyk6i7a" path="res://scenes/characters/tytina/materials/face_details.tres" id="3_ajdrl"]
 [ext_resource type="Texture2D" uid="uid://c4yc1em6nejhf" path="res://assets/textures/tytina/Face Detail 1.png" id="4_6ceoe"]
@@ -144,6 +145,7 @@ shader_parameter/Hair_Hilights = ExtResource("14_0bwdf")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_74vtt"]
 render_priority = 0
 shader = ExtResource("15_h2qrh")
+shader_parameter/Mouth_Shape = Vector3(-1.52588e-05, 5.33608e-06, 0.705923)
 shader_parameter/Mouth_Grid = ExtResource("16_clscr")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xlkeu"]
@@ -160,6 +162,8 @@ shader_parameter/Crown_Hilights = ExtResource("20_wjuws")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_owv6y"]
 render_priority = 0
 shader = ExtResource("22_u8iit")
+shader_parameter/Eye_Shape = Vector3(2.94841, 1.83007, -0.0942282)
+shader_parameter/Eye_Position = Vector3(-3.09299, -2.51633, -0.135913)
 shader_parameter/Eye_Grid_Base = ExtResource("23_tw385")
 shader_parameter/Eye_Pupil = ExtResource("25_u5ppm")
 shader_parameter/Eye_Grid_Mask = ExtResource("24_btel5")
@@ -167,25 +171,35 @@ shader_parameter/Eye_Grid_Mask = ExtResource("24_btel5")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1hbvo"]
 render_priority = 0
 shader = ExtResource("26_4dfek")
+shader_parameter/Eye_Shape = Vector3(0.966797, 2.92191, -0.0492732)
+shader_parameter/Eye_Position = Vector3(0, -8.5447e-06, 1.32979e-05)
 shader_parameter/Eye_Grid_Base = ExtResource("23_tw385")
 shader_parameter/Eye_Pupil = ExtResource("27_weuqe")
 shader_parameter/Eye_Grid_Mask = ExtResource("24_btel5")
 
-[node name="tytina1" instance=ExtResource("1_06hpc")]
+[node name="tytina1" node_paths=PackedStringArray("rig") instance=ExtResource("1_06hpc")]
+script = ExtResource("2_rnh45")
+rig = NodePath("Princess Tytina Armature/Skeleton3D")
 
 [node name="Skeleton3D" parent="Princess Tytina Armature" index="0"]
-bones/1/rotation = Quaternion(0.362013, 0.0594237, -0.0247064, 0.929949)
-bones/2/rotation = Quaternion(0.0250381, 0.0326373, 0.00642674, 0.999133)
-bones/3/rotation = Quaternion(-0.0822985, 0.0170001, 0.0720187, 0.993857)
-bones/4/rotation = Quaternion(0.309828, -0.0136681, -0.0039581, 0.950686)
-bones/5/rotation = Quaternion(4.821e-09, -0.0450703, -7.32782e-09, 0.998984)
+bones/0/position = Vector3(0, -0.0661363, 0)
+bones/1/rotation = Quaternion(0.599208, -0.0281755, -0.0216595, 0.799804)
+bones/2/rotation = Quaternion(0.393367, 0.111023, 0.0604411, 0.91065)
+bones/3/rotation = Quaternion(-0.0740522, -0.040998, 0.0212248, 0.996185)
+bones/4/rotation = Quaternion(0.0724812, -0.198739, 0.0253434, 0.97704)
+bones/5/rotation = Quaternion(-0.196092, 0.112811, 0.285254, 0.931371)
 bones/6/rotation = Quaternion(0.994343, 0.025518, -0.098541, 0.0303321)
 bones/7/rotation = Quaternion(0.126537, -0.0100882, -0.0339024, 0.991331)
-bones/9/rotation = Quaternion(-0.160049, 0.633941, -0.524569, 0.54528)
-bones/10/rotation = Quaternion(0.613505, -0.0118978, -0.131451, 0.778582)
-bones/11/rotation = Quaternion(0.0210855, 0.0226298, 0.0437091, 0.998565)
-bones/15/rotation = Quaternion(-0.385779, -0.161179, 0.360707, 0.833719)
-bones/16/rotation = Quaternion(-0.302509, -0.217182, 0.351669, 0.858865)
+bones/8/rotation = Quaternion(0.706468, -0.000148256, -0.000148341, 0.707745)
+bones/9/rotation = Quaternion(0.713201, 0.0176998, 0.0173852, 0.70052)
+bones/10/rotation = Quaternion(0.746324, 0.000657049, 0.000586133, 0.665582)
+bones/11/rotation = Quaternion(0.713472, 0.0179178, 0.0175856, 0.700234)
+bones/12/rotation = Quaternion(0.707093, -0.00435595, 0.00435605, 0.707093)
+bones/14/rotation = Quaternion(-0.159806, 0.633708, -0.524851, 0.545351)
+bones/15/rotation = Quaternion(0.613313, -0.0118653, -0.131454, 0.778734)
+bones/16/rotation = Quaternion(0.0210854, 0.0226298, 0.0437091, 0.998565)
+bones/20/rotation = Quaternion(-0.385779, -0.161179, 0.360707, 0.833719)
+bones/21/rotation = Quaternion(-0.302509, -0.217182, 0.351669, 0.858865)
 
 [node name="Princess Tytina Mesh" parent="Princess Tytina Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_np8c8")
@@ -201,5 +215,3 @@ surface_material_override/9 = SubResource("ShaderMaterial_xlkeu")
 surface_material_override/10 = SubResource("ShaderMaterial_8hxyn")
 surface_material_override/11 = SubResource("ShaderMaterial_owv6y")
 surface_material_override/12 = SubResource("ShaderMaterial_1hbvo")
-
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Princess Tytina Armature/Skeleton3D" index="1"]

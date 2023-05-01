@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_play_button_pressed():
-	get_tree().call_group("DS Display Manager", "switch_to_game")
+	get_tree().call_group("DS Display Manager", "switch_to_opening")
 	pass # Replace with function body.
 
 

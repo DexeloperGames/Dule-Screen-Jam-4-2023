@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://kvrdj8tfjvcy"]
+
+[ext_resource type="Script" path="res://scenes/cutscene_ig.gd" id="1_htviq"]
+[ext_resource type="PackedScene" uid="uid://dv0kbxpcx0v4b" path="res://scenes/zoinks.tscn" id="1_p3h3g"]
+[ext_resource type="PackedScene" uid="uid://o8pm18j3bkmg" path="res://assets/cutscenes ig/camra.glb" id="2_dk2d0"]
+[ext_resource type="PackedScene" uid="uid://knaidybndje" path="res://scenes/characters/tytina/tytina_1.tscn" id="3_8bb85"]
+
+[sub_resource type="Environment" id="Environment_t17xd"]
+background_mode = 1
+background_color = Color(0.745098, 0.894118, 0.984314, 1)
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_exposure = 0.64
+fog_enabled = true
+fog_light_color = Color(0, 0.407843, 0.670588, 1)
+fog_light_energy = 0.41
+fog_height = 19.84
+fog_height_density = -0.1739
+adjustment_enabled = true
+
+[node name="Cutscene ig" type="Node3D"]
+script = ExtResource("1_htviq")
+
+[node name="zoinks" parent="." instance=ExtResource("1_p3h3g")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t17xd")
+
+[node name="camra" parent="." instance=ExtResource("2_dk2d0")]
+
+[node name="tytina1" parent="." instance=ExtResource("3_8bb85")]
+
+[node name="Skeleton3D" parent="tytina1/Princess Tytina Armature" index="0"]
+bones/0/position = Vector3(0, 0, 0)
+bones/1/rotation = Quaternion(0.362013, 0.0594237, -0.0247064, 0.929949)
+bones/2/rotation = Quaternion(0.0250381, 0.0326373, 0.00642674, 0.999133)
+bones/3/rotation = Quaternion(-0.0822985, 0.0170001, 0.0720187, 0.993857)
+bones/4/rotation = Quaternion(0.309828, -0.0136681, -0.0039581, 0.950686)
+bones/5/rotation = Quaternion(4.821e-09, -0.0450703, -7.32782e-09, 0.998984)
+bones/8/rotation = Quaternion(0.687618, -0.015124, -0.0159623, 0.725739)
+bones/9/rotation = Quaternion(0.724963, 0.0115942, 0.0110128, 0.688603)
+bones/10/rotation = Quaternion(0.707107, -1.34784e-07, 2.93304e-08, 0.707107)
+bones/11/rotation = Quaternion(0.712808, 0.0181819, 0.0178783, 0.700896)
+bones/12/rotation = Quaternion(0.707093, -0.00435596, 0.00435602, 0.707093)
+bones/14/rotation = Quaternion(-0.160049, 0.633941, -0.524569, 0.54528)
+bones/15/rotation = Quaternion(0.613505, -0.0118978, -0.131451, 0.778582)
+bones/16/rotation = Quaternion(0.0210855, 0.0226298, 0.0437091, 0.998565)
+
+[connection signal="animation_finished" from="tytina1/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+
+[editable path="camra"]
+[editable path="tytina1"]

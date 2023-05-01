@@ -2,6 +2,7 @@ extends Control
 
 @export var title_screen = preload("res://scenes/UI/title_screen.tscn")
 @export var settings_menu = preload("res://scenes/UI/settings_menu.tscn")
+@export var opening_cutscene = preload("res://scenes/cutscene_display.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,3 +26,6 @@ func switch_to_main_menu():
 
 func switch_to_settings():
 	switch_to(settings_menu)
+
+func switch_to_opening():
+	switch_to(opening_cutscene)

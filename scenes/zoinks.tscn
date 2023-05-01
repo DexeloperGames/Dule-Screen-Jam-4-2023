@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv0kbxpcx0v4b"]
+
+[ext_resource type="PackedScene" uid="uid://bilbb4s8kwvro" path="res://assets/cutscenes ig/zoinks.glb" id="1_nkffy"]
+[ext_resource type="Shader" uid="uid://bhkw3otlrr8o6" path="res://scenes/watr.tres" id="2_mlhx8"]
+[ext_resource type="Texture2D" uid="uid://dsn1xefo4eqxt" path="res://assets/textures/buildings/waterlooptexture.png" id="3_0oixg"]
+[ext_resource type="Shader" uid="uid://bdor8dr75rvqk" path="res://scenes/building ig.tres" id="4_nijgc"]
+[ext_resource type="Texture2D" uid="uid://bbultlktm7p0i" path="res://assets/textures/buildings/buildingside1.png" id="5_dv6fh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_inhn1"]
+render_priority = 0
+shader = ExtResource("2_mlhx8")
+shader_parameter/WaterText = ExtResource("3_0oixg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nfcsr"]
+render_priority = 0
+shader = ExtResource("4_nijgc")
+shader_parameter/Building_Texture = ExtResource("5_dv6fh")
+
+[node name="zoinks" instance=ExtResource("1_nkffy")]
+
+[node name="Plane001" parent="." index="0"]
+transform = Transform3D(70.1871, 0, 0, 0, 70.1871, 0, 0, 0, 70.1871, 0.442362, 33.7958, -0.0801931)
+surface_material_override/0 = SubResource("ShaderMaterial_inhn1")
+
+[node name="Cube001" parent="." index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_nfcsr")
+
+[node name="Cube002" parent="." index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_nfcsr")
+
+[node name="Cube003" parent="." index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_nfcsr")
+
+[node name="Cube004" parent="." index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_nfcsr")
