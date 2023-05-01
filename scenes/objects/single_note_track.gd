@@ -9,7 +9,7 @@ class_name NoteTrack
 @export var auto_play : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Scaler.scale.y = Globals.scroll_speed
+	update_scroll_speed()
 	pass # Replace with function body.
 
 func load_notes(note_data):
@@ -19,13 +19,18 @@ func load_notes(note_data):
 		new_note.type = track_type
 		$Scaler/Scroller.add_child(new_note)
 		new_note.position.y = time*1000.0
-		new_note.scale.y = 1.0/Globals.scroll_speed
+		new_note.scale.y = 1.0/Globals.Settings.Gameplay.scroll_speed
 		notes.append(new_note)
 		new_note.parent_track = self
 		new_note.type = track_type
 		pass
 	notes.sort_custom(func(a,b): return a.hit_time < b.hit_time)
 	pass
+
+func update_scroll_speed():
+	$Scaler.scale.y = Globals.Settings.Gameplay.scroll_speed*Globals.Settings.Gameplay.scroll_direction
+	for note in notes:
+		note.scale.y = 1.0/$Scaler.scale.y
 
 func refresh_notes():
 	for note in notes:

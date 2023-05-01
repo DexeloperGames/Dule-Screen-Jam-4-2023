@@ -28,40 +28,56 @@ func _ready():
 	
 	
 	
-	$Node2D.visible = show_ui
+	$"Game UI".visible = show_ui
+	reload_settings()
 #	$AudioStreamPlayer.play(-3.0)
 	pass # Replace with function body.
 
+func reload_settings():
+	$"Playfield Track".position.y = 0 if Globals.Settings.Gameplay.scroll_direction > 0.0 else 300
+	$"Game UI".position.y = 0 if Globals.Settings.Gameplay.scroll_direction < 0.0 else 192
+	var note_tracks = [notetrack0,notetrack1,notetrack2,notetrack3]
+	for track in note_tracks:
+		track.update_scroll_speed()
+	pass
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var belta = 0.0
 func _process(delta):
 	time += delta
+	belta = delta
 	if time > thing_time and not stupid_thing:
 		audio_player.play()
 		stupid_thing = true
 	update_track_times()
 	pass
 
+var previous = 0.0
 func update_track_times():
 	var current_time = (Time.get_ticks_usec()/1.0e+6)-thing_time
-	current_time = audio_player.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()+Globals.offset
+	current_time = audio_player.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()+Globals.Settings.Gameplay.offset
+	if current_time < previous and stupid_thing:
+		print("oops times weird yeah")
+		current_time = previous + belta*audio_player.pitch_scale
 	notetrack0.song_time = current_time
 	notetrack1.song_time = current_time
 	notetrack2.song_time = current_time
 	notetrack3.song_time = current_time
+	previous = current_time
 	pass
 
 func _input(event):
 	if event.is_action("note_0"):
-		$Icon0.modulate = Color.MAGENTA if event.is_pressed() else Color.WHITE
+		$"Playfield Track/Icon0".modulate = Globals.Settings.Gameplay.note_colors[0] if event.is_pressed() else Color.WHITE
 		notetrack0._track_input(event)
 	if event.is_action("note_1"):
-		$Icon1.modulate = Color.CYAN if event.is_pressed() else Color.WHITE
+		$"Playfield Track/Icon1".modulate = Globals.Settings.Gameplay.note_colors[1] if event.is_pressed() else Color.WHITE
 		notetrack1._track_input(event)
 	if event.is_action("note_2"):
-		$Icon2.modulate = Color.GREEN if event.is_pressed() else Color.WHITE
+		$"Playfield Track/Icon2".modulate = Globals.Settings.Gameplay.note_colors[2] if event.is_pressed() else Color.WHITE
 		notetrack2._track_input(event)
 	if event.is_action("note_3"):
-		$Icon3.modulate = Color.RED if event.is_pressed() else Color.WHITE
+		$"Playfield Track/Icon3".modulate = Globals.Settings.Gameplay.note_colors[3] if event.is_pressed() else Color.WHITE
 		notetrack3._track_input(event)
 
 var score = 0

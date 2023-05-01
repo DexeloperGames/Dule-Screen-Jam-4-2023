@@ -5,12 +5,16 @@ extends Node
 @export var great_hit_time = 32/1000.0
 @export var nautical_hit_time = 16/1000.0
 
-@export var scroll_speed = 2.82
-@export var offset = -0.0/1000.0
-@export var scroll_direction = 1.0
+@export var Settings : SettingsResource = SettingsResource.new()
+
+@export var SettingsPath : String = "user://settings.tres"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var file_settings = SettingsResource.load_from()
+	if file_settings:
+		Settings = file_settings
+	Settings.load_settings()
 	pass # Replace with function body.
 
 

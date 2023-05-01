@@ -1,12 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://b46hu5828atnw"]
+[gd_scene load_steps=8 format=3 uid="uid://b46hu5828atnw"]
 
 [ext_resource type="PackedScene" uid="uid://0y0qpp0ertw0" path="res://scenes/objects/playfield.tscn" id="1_61v2l"]
+[ext_resource type="Script" path="res://scenes/UI/gameplay_settings.gd" id="1_ytmgr"]
+[ext_resource type="PackedScene" uid="uid://bnt4jyvfinvmh" path="res://scenes/UI/controller_color_picker.tscn" id="2_1c3la"]
 
-[node name="Gameplay Settings" type="Control"]
+[sub_resource type="Theme" id="Theme_l1vts"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2beyk"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-32, -32, 0, 64, 64, 0),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 33558545,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 66, 0, 0, 0, 66, 0, 0, 0, 194, 0, 0, 0, 66, 0, 0, 0, 194, 0, 0, 0, 194, 0, 0, 0, 66, 0, 0, 0, 194)
+}]
+
+[sub_resource type="Gradient" id="Gradient_uy4nm"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x4h7c"]
+gradient = SubResource("Gradient_uy4nm")
+
+[node name="Gameplay Settings" type="Control" node_paths=PackedStringArray("settings_container", "playfield", "color1_picker", "color2_picker", "color3_picker", "color4_picker", "vertical_flip_checkbox", "scroll_speed_slider", "volume_slider")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 384.0
+script = ExtResource("1_ytmgr")
+settings_container = NodePath("Settings Container")
+playfield = NodePath("Background Gameplay Tiktok/Playfield")
+color1_picker = NodePath("Settings Container/ScrollContainer/VBoxContainer/Color 1")
+color2_picker = NodePath("Settings Container/ScrollContainer/VBoxContainer/Color 2")
+color3_picker = NodePath("Settings Container/ScrollContainer/VBoxContainer/Color 3")
+color4_picker = NodePath("Settings Container/ScrollContainer/VBoxContainer/Color 4")
+vertical_flip_checkbox = NodePath("Settings Container/ScrollContainer/VBoxContainer/Flip Vertically Check Box")
+scroll_speed_slider = NodePath("Settings Container/ScrollContainer/VBoxContainer/Sroll Speed Slider")
+volume_slider = NodePath("Settings Container/ScrollContainer/VBoxContainer/HSlider")
 
 [node name="Background Gameplay Tiktok" type="Control" parent="."]
 clip_contents = true
@@ -19,7 +51,6 @@ grow_vertical = 2
 
 [node name="Playfield" parent="Background Gameplay Tiktok" instance=ExtResource("1_61v2l")]
 auto_play = true
-show_ui = false
 
 [node name="Settings Container" type="Control" parent="."]
 layout_mode = 1
@@ -37,4 +68,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.568627)
+color = Color(0.266667, 0.505882, 0.533333, 0.733333)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Settings Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings Container/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Back Button" type="Button" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="Label5" type="Label" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="HSeparator2" type="HSeparator" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Scroll Speed" type="Label" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Scroll Speed"
+
+[node name="Sroll Speed Slider" type="HSlider" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 0.1
+
+[node name="Flip Vertically Check Box" type="CheckBox" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_l1vts")
+text = "Flip Vertically"
+
+[node name="HSeparator" type="HSeparator" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Color 1"
+
+[node name="Color 1" parent="Settings Container/ScrollContainer/VBoxContainer" instance=ExtResource("2_1c3la")]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Color 2"
+
+[node name="Color 2" parent="Settings Container/ScrollContainer/VBoxContainer" instance=ExtResource("2_1c3la")]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Color 3"
+
+[node name="Color 3" parent="Settings Container/ScrollContainer/VBoxContainer" instance=ExtResource("2_1c3la")]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="Settings Container/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Color 4"
+
+[node name="Color 4" parent="Settings Container/ScrollContainer/VBoxContainer" instance=ExtResource("2_1c3la")]
+layout_mode = 2
+
+[node name="Sprite2D" type="MeshInstance2D" parent="."]
+visible = false
+mesh = SubResource("ArrayMesh_2beyk")
+texture = SubResource("GradientTexture2D_x4h7c")
+
+[connection signal="pressed" from="Settings Container/ScrollContainer/VBoxContainer/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Settings Container/ScrollContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Settings Container/ScrollContainer/VBoxContainer/Sroll Speed Slider" to="." method="_on_sroll_speed_slider_value_changed"]
+[connection signal="toggled" from="Settings Container/ScrollContainer/VBoxContainer/Flip Vertically Check Box" to="." method="_on_flip_vertically_check_box_toggled"]
+[connection signal="color_changed" from="Settings Container/ScrollContainer/VBoxContainer/Color 1" to="." method="_on_color_1_color_changed"]
+[connection signal="color_changed" from="Settings Container/ScrollContainer/VBoxContainer/Color 2" to="." method="_on_color_2_color_changed"]
+[connection signal="color_changed" from="Settings Container/ScrollContainer/VBoxContainer/Color 3" to="." method="_on_color_3_color_changed"]
+[connection signal="color_changed" from="Settings Container/ScrollContainer/VBoxContainer/Color 4" to="." method="_on_color_4_color_changed"]

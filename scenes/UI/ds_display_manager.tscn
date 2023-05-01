@@ -1,18 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://caprwfieqxglr"]
+[gd_scene load_steps=4 format=3 uid="uid://caprwfieqxglr"]
 
-[ext_resource type="PackedScene" uid="uid://dcfwghddf1oxm" path="res://scenes/UI/settings_menu.tscn" id="1_y1dqt"]
+[ext_resource type="PackedScene" uid="uid://b46hu5828atnw" path="res://scenes/UI/gameplay_settings.tscn" id="1_8m7rk"]
+[ext_resource type="Script" path="res://scenes/UI/ds_display_manager.gd" id="1_p222f"]
+[ext_resource type="PackedScene" uid="uid://7cd6d75htswf" path="res://scenes/UI/title_screen.tscn" id="2_6a4vg"]
 
-[node name="DS Display Manager" type="Control"]
+[node name="DS Display Manager" type="Control" groups=["DS Display Manager"]]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 256.0
 offset_bottom = 384.0
+script = ExtResource("1_p222f")
+settings_menu = ExtResource("1_8m7rk")
 
-[node name="Settings Menu" parent="." instance=ExtResource("1_y1dqt")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -192.0
-offset_bottom = 0.0
-grow_vertical = 0
+[node name="Title Screen" parent="." instance=ExtResource("2_6a4vg")]

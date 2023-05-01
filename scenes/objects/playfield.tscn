@@ -14,10 +14,10 @@ size = Vector2(256, 384)
 [node name="Playfield" type="Node2D" node_paths=PackedStringArray("notetrack0", "notetrack1", "notetrack2", "notetrack3", "audio_player") groups=["Player Hit Recievers"]]
 position = Vector2(128, 34)
 script = ExtResource("1_620sc")
-notetrack0 = NodePath("Tracks/SingleNoteTrack")
-notetrack1 = NodePath("Tracks/SingleNoteTrack2")
-notetrack2 = NodePath("Tracks/SingleNoteTrack3")
-notetrack3 = NodePath("Tracks/SingleNoteTrack4")
+notetrack0 = NodePath("Playfield Track/Tracks/SingleNoteTrack")
+notetrack1 = NodePath("Playfield Track/Tracks/SingleNoteTrack2")
+notetrack2 = NodePath("Playfield Track/Tracks/SingleNoteTrack3")
+notetrack3 = NodePath("Playfield Track/Tracks/SingleNoteTrack4")
 audio_player = NodePath("AudioStreamPlayer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -33,42 +33,45 @@ position = Vector2(0, 158)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D"]
 shape = SubResource("RectangleShape2D_scpd6")
 
-[node name="Icon0" type="Sprite2D" parent="."]
-position = Vector2(-85.1905, 6)
+[node name="Playfield Track" type="Marker2D" parent="."]
+position = Vector2(0, 300)
+
+[node name="Icon0" type="Sprite2D" parent="Playfield Track"]
+position = Vector2(-85.19, 6)
 scale = Vector2(0.4437, 0.4437)
 texture = ExtResource("2_mismi")
 
-[node name="Icon1" type="Sprite2D" parent="."]
+[node name="Icon1" type="Sprite2D" parent="Playfield Track"]
 position = Vector2(-28.3968, 6)
 scale = Vector2(0.4437, 0.4437)
 texture = ExtResource("2_mismi")
 
-[node name="Icon2" type="Sprite2D" parent="."]
+[node name="Icon2" type="Sprite2D" parent="Playfield Track"]
 position = Vector2(28.3968, 6)
 scale = Vector2(0.4437, 0.4437)
 texture = ExtResource("2_mismi")
 
-[node name="Icon3" type="Sprite2D" parent="."]
+[node name="Icon3" type="Sprite2D" parent="Playfield Track"]
 position = Vector2(85.1905, 6)
 scale = Vector2(0.4437, 0.4437)
 texture = ExtResource("2_mismi")
 
-[node name="Tracks" type="Marker2D" parent="."]
+[node name="Tracks" type="Marker2D" parent="Playfield Track"]
 position = Vector2(0, 6)
 scale = Vector2(0.4437, 0.4437)
 
-[node name="SingleNoteTrack" parent="Tracks" instance=ExtResource("3_ldhmr")]
+[node name="SingleNoteTrack" parent="Playfield Track/Tracks" instance=ExtResource("3_ldhmr")]
 position = Vector2(-192, 0)
 
-[node name="SingleNoteTrack2" parent="Tracks" instance=ExtResource("3_ldhmr")]
+[node name="SingleNoteTrack2" parent="Playfield Track/Tracks" instance=ExtResource("3_ldhmr")]
 position = Vector2(-64, 0)
 track_type = 1
 
-[node name="SingleNoteTrack3" parent="Tracks" instance=ExtResource("3_ldhmr")]
+[node name="SingleNoteTrack3" parent="Playfield Track/Tracks" instance=ExtResource("3_ldhmr")]
 position = Vector2(64, 0)
 track_type = 2
 
-[node name="SingleNoteTrack4" parent="Tracks" instance=ExtResource("3_ldhmr")]
+[node name="SingleNoteTrack4" parent="Playfield Track/Tracks" instance=ExtResource("3_ldhmr")]
 position = Vector2(192, 0)
 track_type = 3
 
@@ -82,21 +85,24 @@ offset_right = -222.644
 offset_bottom = 46.1984
 text = "SCORE:"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Game UI" type="Node2D" parent="."]
 
-[node name="JudgementContainer" parent="Node2D" instance=ExtResource("5_dbj0n")]
-position = Vector2(0, 213.208)
+[node name="JudgementContainer" parent="Game UI" instance=ExtResource("5_dbj0n")]
+position = Vector2(0, 12)
 scale = Vector2(0.327842, 0.327842)
 
-[node name="Hit Error Meter" parent="Node2D" instance=ExtResource("6_nw1wd")]
+[node name="Hit Error Meter" parent="Game UI" instance=ExtResource("6_nw1wd")]
 position = Vector2(0, 115.594)
 scale = Vector2(0.239396, 0.239396)
 
-[node name="Combo Counter" parent="Node2D" instance=ExtResource("7_gq3vl")]
-position = Vector2(-67, 307)
+[node name="Combo Counter" parent="Game UI" instance=ExtResource("7_gq3vl")]
+position = Vector2(-67, 107)
 scale = Vector2(0.22238, 0.22238)
 
-[node name="Max Combo Counter2" parent="Node2D" instance=ExtResource("7_gq3vl")]
-position = Vector2(84, 313)
+[node name="Max Combo Counter2" parent="Game UI" instance=ExtResource("7_gq3vl")]
+position = Vector2(84, 95)
 scale = Vector2(0.127697, 0.127697)
 combo_display = 1
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false

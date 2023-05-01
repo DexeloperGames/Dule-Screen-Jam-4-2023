@@ -1,0 +1,124 @@
+[gd_scene load_steps=18 format=3 uid="uid://bnt4jyvfinvmh"]
+
+[ext_resource type="Script" path="res://scenes/UI/controller_color_picker.gd" id="1_tq1qh"]
+[ext_resource type="Shader" uid="uid://d17wptdfjf5g1" path="res://scenes/UI/controller_color_picker_godgodotneedsstyleshaderes.tres" id="2_4dli7"]
+
+[sub_resource type="Image" id="Image_rfvia"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 9, 255, 255, 255, 49, 255, 255, 255, 77, 255, 255, 255, 90, 255, 255, 255, 90, 255, 255, 255, 77, 255, 255, 255, 49, 255, 255, 255, 8, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 32, 255, 255, 255, 90, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 89, 255, 255, 255, 31, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 32, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 30, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 9, 255, 255, 255, 90, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 89, 255, 255, 255, 8, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 49, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 47, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 77, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 76, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 90, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 90, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 90, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 90, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 78, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 76, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 49, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 47, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 9, 255, 255, 255, 89, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 89, 255, 255, 255, 7, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 31, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 29, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 30, 255, 255, 255, 89, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 94, 255, 255, 255, 89, 255, 255, 255, 29, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 8, 255, 255, 255, 48, 255, 255, 255, 77, 255, 255, 255, 90, 255, 255, 255, 89, 255, 255, 255, 76, 255, 255, 255, 47, 255, 255, 255, 7, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_cp4s1"]
+image = SubResource("Image_rfvia")
+
+[sub_resource type="Theme" id="Theme_u17fa"]
+HSlider/icons/grabber = SubResource("ImageTexture_cp4s1")
+
+[sub_resource type="Gradient" id="Gradient_quc1g"]
+offsets = PackedFloat32Array(0, 0.167, 0.333, 0.5, 0.667, 0.833, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rppoj"]
+gradient = SubResource("Gradient_quc1g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72ql0"]
+texture = SubResource("GradientTexture1D_rppoj")
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wk7so"]
+resource_local_to_scene = true
+shader = ExtResource("2_4dli7")
+shader_parameter/Color = Color(0, 1, 0, 1)
+
+[sub_resource type="Theme" id="Theme_rc2ey"]
+HSlider/icons/grabber = SubResource("ImageTexture_cp4s1")
+
+[sub_resource type="Gradient" id="Gradient_fjpxh"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3odm7"]
+gradient = SubResource("Gradient_fjpxh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_46fwu"]
+texture = SubResource("GradientTexture1D_3odm7")
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="Theme" id="Theme_mybw6"]
+HSlider/icons/grabber = SubResource("ImageTexture_cp4s1")
+
+[sub_resource type="Gradient" id="Gradient_vq87w"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8k604"]
+gradient = SubResource("Gradient_vq87w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kho7x"]
+texture = SubResource("GradientTexture1D_8k604")
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[node name="HBoxContainer" type="HBoxContainer" node_paths=PackedStringArray("hue_slider", "saturation_slider", "value_slider")]
+script = ExtResource("1_tq1qh")
+hue_slider = NodePath("VBoxContainer/HueSlider")
+saturation_slider = NodePath("VBoxContainer/SaturationSlider")
+value_slider = NodePath("VBoxContainer/ValueSlider")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Hue" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Hue"
+
+[node name="Hue2" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Sat"
+
+[node name="Hue3" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Val"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HueSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = SubResource("Theme_u17fa")
+theme_override_styles/slider = SubResource("StyleBoxTexture_72ql0")
+max_value = 1.0
+step = 0.083
+
+[node name="SaturationSlider" type="HSlider" parent="VBoxContainer"]
+material = SubResource("ShaderMaterial_wk7so")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = SubResource("Theme_rc2ey")
+theme_override_styles/slider = SubResource("StyleBoxTexture_46fwu")
+max_value = 1.0
+step = 0.1
+
+[node name="ValueSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme = SubResource("Theme_mybw6")
+theme_override_styles/slider = SubResource("StyleBoxTexture_kho7x")
+max_value = 1.0
+step = 0.1
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+visible = false
+layout_mode = 2
+
+[connection signal="value_changed" from="VBoxContainer/HueSlider" to="." method="_on_hue_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SaturationSlider" to="." method="_on_saturation_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/ValueSlider" to="." method="_on_value_slider_value_changed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dts2esh68xt6e"]
+
+[ext_resource type="Script" path="res://scenes/UI/note_color_selector.gd" id="1_vej8b"]
+[ext_resource type="PackedScene" uid="uid://bnt4jyvfinvmh" path="res://scenes/UI/controller_color_picker.tscn" id="2_a70nq"]
+
+[node name="Note Color Selector" type="Control" node_paths=PackedStringArray("tree")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vej8b")
+tree = NodePath("")
+
+[node name="HBoxContainer" parent="." instance=ExtResource("2_a70nq")]
+layout_mode = 0
+offset_right = 36.0
+offset_bottom = 86.0
