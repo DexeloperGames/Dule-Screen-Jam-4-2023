@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm02e7k71nw2m"]
+
+[ext_resource type="Script" path="res://scenes/dialouge label.gd" id="1_8gh8m"]
+
+[node name="Dialoug or whatever" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 384.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pictures ig" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Dialoug Box" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Dialoug Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You seem to be alive!fsdfgfgadgfgfdfgfdsgfsdgsfdsgfd"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("1_8gh8m")
+lines = Array[String](["You seem to be alive!", "and somehow not drowing?", "You're clearly not from here.", "No matter! For we shall return you", "With music!", "aaaand this is the part where its supposed to transition into the first rhythm game song ", "but the jam ends in literally 9 minutes and 22 seconds as of righting this", "i spent wayyy too long on the character model (procrastinated)", "anyways", "i still have the test level tho"])

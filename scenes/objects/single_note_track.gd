@@ -69,7 +69,7 @@ func _track_input(event : InputEvent):
 		var closest = find_closest_note()
 		if closest != null:
 			print("found closest note: ", closest.hit_time)
-			var offset_time = abs(closest.hit_time-(song_time-Globals.offset))
+			var offset_time = abs(closest.hit_time-(song_time))
 			print("song time ", song_time)
 			print("offset_time ", offset_time)
 			if offset_time<Globals.miss_time:
@@ -80,7 +80,7 @@ func _track_input(event : InputEvent):
 						hit_rating = 2
 					if offset_time<Globals.nautical_hit_time:
 						hit_rating = 3
-					get_tree().call_group("Player Hit Recievers","recieve_player_hit", hit_rating, closest.hit_time-(song_time-Globals.offset))
+					get_tree().call_group("Player Hit Recievers","recieve_player_hit", hit_rating, closest.hit_time-(song_time))
 					pass
 				else:
 					print("missed lol")

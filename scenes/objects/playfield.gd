@@ -50,7 +50,12 @@ func _process(delta):
 		audio_player.play()
 		stupid_thing = true
 	update_track_times()
+	check_over()
 	pass
+
+func check_over():
+	if notetrack0.notes.is_empty() and notetrack1.notes.is_empty() and notetrack2.notes.is_empty() and notetrack3.notes.is_empty():
+		get_tree().call_group("DS Display Manager", "switch_to_title")
 
 var previous = 0.0
 func update_track_times():

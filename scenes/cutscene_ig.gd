@@ -20,5 +20,5 @@ func _process(delta):
 
 
 func _on_animation_player_animation_finished(anim_name):
-	get_tree().call_group("DS Display Manager", "switch_to_main_menu")
+#	get_tree().call_group("DS Display Manager", "switch_to_main_menu")
 	pass # Replace with function body.
