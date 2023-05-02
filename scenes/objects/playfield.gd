@@ -72,6 +72,10 @@ func update_track_times():
 	pass
 
 func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().call_group("DS Display Manager", "switch_to_main_menu")
+	if event.is_action_pressed("restart"):
+		get_tree().call_group("DS Display Manager", "switch_to_gameplay")
 	if event.is_action("note_0"):
 		$"Playfield Track/Icon0".modulate = Globals.Settings.Gameplay.note_colors[0] if event.is_pressed() else Color.WHITE
 		notetrack0._track_input(event)

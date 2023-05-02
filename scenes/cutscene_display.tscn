@@ -8,7 +8,7 @@
 
 [sub_resource type="Animation" id="Animation_urbwu"]
 resource_name = "Cutscene directed by Steven Spielburg"
-length = 30.0
+length = 25.0
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -264,7 +264,7 @@ size_flags_vertical = 0
 [node name="SubViewport" type="SubViewport" parent="Game Cutscene/VBoxContainer/AspectRatioContainer/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(256, 192)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="Cutscene ig" parent="Game Cutscene/VBoxContainer/AspectRatioContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_8o176")]
 

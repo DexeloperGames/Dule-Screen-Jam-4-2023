@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm02e7k71nw2m"]
+[gd_scene load_steps=13 format=3 uid="uid://cm02e7k71nw2m"]
 
 [ext_resource type="Script" path="res://scenes/dialouge label.gd" id="1_8gh8m"]
+[ext_resource type="Texture2D" uid="uid://cs15im5kvwqqn" path="res://assets/textures/dialuge/you seem to be alive.png" id="2_ff71p"]
+[ext_resource type="Texture2D" uid="uid://bey14eck8lfg5" path="res://assets/textures/dialuge/and some how not drowning.png" id="3_iiloj"]
+[ext_resource type="Texture2D" uid="uid://dh0fgxx1ytutn" path="res://assets/textures/dialuge/youre clearly not from here.png" id="4_5jc7k"]
+[ext_resource type="Texture2D" uid="uid://cxi81ba8tdy4t" path="res://assets/textures/dialuge/no matter we shall return you.png" id="5_dsdts"]
+[ext_resource type="Texture2D" uid="uid://ya3utxq8lcap" path="res://assets/textures/dialuge/with music.png" id="6_y8qbc"]
+[ext_resource type="Texture2D" uid="uid://ua8nb88ohsg3" path="res://assets/textures/dialuge/aaand this is where.png" id="7_k70ng"]
+[ext_resource type="Texture2D" uid="uid://b20ixapcinhx0" path="res://assets/textures/dialuge/literally night minutes twilight two seconds.png" id="8_7f5o7"]
+[ext_resource type="Texture2D" uid="uid://emqxti1d5x6s" path="res://assets/textures/dialuge/spent wayy too long on the character model.png" id="9_jc6jr"]
+[ext_resource type="Texture2D" uid="uid://cvggsbx1urr6k" path="res://assets/textures/dialuge/anyways.png" id="10_7mlxa"]
+[ext_resource type="Texture2D" uid="uid://xangfib3objp" path="res://assets/textures/dialuge/dotdot.png" id="11_3j6or"]
+[ext_resource type="Texture2D" uid="uid://bl740m8y3rp8a" path="res://assets/textures/dialuge/i still have the test level tho.png" id="12_s3ew3"]
 
 [node name="Dialoug or whatever" type="Control"]
 layout_mode = 3
@@ -15,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.0980392, 0.368627, 0.392157, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -29,11 +40,19 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Pictures ig"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Dialoug Box" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/Dialoug Box"]
+[node name="Label" type="Label" parent="VBoxContainer/Dialoug Box" node_paths=PackedStringArray("texture_rect")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,4 +63,6 @@ text = "You seem to be alive!fsdfgfgadgfgfdfgfdsgfsdgsfdsgfd"
 horizontal_alignment = 1
 autowrap_mode = 2
 script = ExtResource("1_8gh8m")
-lines = Array[String](["You seem to be alive!", "and somehow not drowing?", "You're clearly not from here.", "No matter! For we shall return you", "With music!", "aaaand this is the part where its supposed to transition into the first rhythm game song ", "but the jam ends in literally 9 minutes and 22 seconds as of righting this", "i spent wayyy too long on the character model (procrastinated)", "anyways", "i still have the test level tho"])
+lines = Array[String](["You seem to be alive!", "and somehow not drowing?", "You're clearly not from here.", "No matter! For we shall return you", "With music!", "aaaand this is the part where its supposed to transition into the first rhythm game song ", "but the jam ends in literally 9 minutes and 22 seconds as of righting this", "i spent wayyy too long on the character model (procrastinated)", "anyways", "...", "i still have the test level tho"])
+line_images = Array[Texture]([ExtResource("2_ff71p"), ExtResource("3_iiloj"), ExtResource("4_5jc7k"), ExtResource("5_dsdts"), ExtResource("6_y8qbc"), ExtResource("7_k70ng"), ExtResource("8_7f5o7"), ExtResource("9_jc6jr"), ExtResource("10_7mlxa"), ExtResource("11_3j6or"), ExtResource("12_s3ew3")])
+texture_rect = NodePath("../../Pictures ig/TextureRect")

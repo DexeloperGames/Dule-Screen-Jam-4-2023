@@ -2,7 +2,8 @@ extends Label
 
 @export var lines : Array[String]
 @export var line_index : int = 0
-
+@export var line_images : Array[Texture]
+@export var texture_rect : TextureRect
 var tween : Tween
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,8 @@ func _next_line():
 		get_tree().call_group("DS Display Manager", "switch_to_gameplay")
 	else:
 		text = lines[line_index]
+		var texture = line_images[line_index]
+		texture_rect.texture = texture
 		line_index += 1
 		visible_ratio = 0.0
 		if tween:
